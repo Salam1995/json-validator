@@ -1,0 +1,103 @@
+Metadata-Version: 2.1
+Name: json-validator
+Version: 0.0.1
+Summary: Json Validator
+Home-page: UNKNOWN
+Author: Abdul Salam
+Author-email: salamsol96@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7, <4
+Description-Content-Type: text/markdown
+
+# Json Validator
+
+A trial project that serves the purpose of a challenge for [Berlin Brands Group (BBG)](https://www.berlin-brands-group.com/en), BBG has been designing, producing, and selling products in the home & living, consumer electronics, sound & light and sports categories across europe.
+
+## Directory Structure
+
+```
+│   Dockerfile
+│   main.py
+│   README.md
+│   requirements.txt
+│   setup.py
+│
+├───input
+│       Cost_Data.xlsx
+│       IDs.csv
+│       Order_Data.xlsx
+│
+├───lib
+│   │   credentials.json
+│   │   datautil.py
+│   │   logger.py
+│   │   utils.py
+│   │   __init__.py
+│
+├───notebook
+│       BBG Analytics.html
+│       BBG Analytics.ipynb
+│
+└───src
+    │   bbg.py
+    │
+```
+
+- `BBG_Project` contains the project directory
+- `BBG_Project\main.py` is script consuming `BBG` class
+- `BBG_Project\src\bbg.py` is the script consuming `BBG` class with associated methods
+- `BBG_Project\lib\datautil.py` holds data utilites that assists in performing operations
+- `BBG_Project\lib\utils.py` holds genral utilites that assists in file and calculation operations
+- `BBG_Project\lib\logger.py` module for logging information of the operations
+- `BBG_Project\input\` holds input dataset to process
+- `BBG_Project\notebook\` is a directory holding jupyter-notebook script
+- `BBG_Project\screenshot\` is a directory with output screenshots on terminal
+
+## Dataset
+
+- All the dataset files are in input directory in csv and xlsx format.
+- Datasets
+
+  - `IDs.csv` : dataset with shop ID, name and location
+  - `Cost_Data.xlsx` : dataset with advertising cost of shops
+  - `Order_Data.xlsx` : dataset with shop order information
+
+## Instruction to use
+
+### Without Docker
+
+- Go to the project directory `BBG_Project`
+- Run the `pip install -e .`
+- Run the script `main.py`
+
+  ```python
+  python main.py
+  ```
+- `main.py` loads the input datasets, prepares and uploads the aggregate results to [Google Sheet](https://docs.google.com/spreadsheets/d/1raH_rP4iTqbrC2TBh86ydwVcTO3BOKSb-4SnViQFKuQ/)
+
+### With Docker
+
+```python
+
+```
+
+## output
+
+- once the process is complete, all the results will be updated to [Google Sheet](https://docs.google.com/spreadsheets/d/1raH_rP4iTqbrC2TBh86ydwVcTO3BOKSb-4SnViQFKuQ/) as:
+
+```text
+    - Total Revenue by Brands
+        - brand_name	    total_revenue_value
+  
+    - Total_Revenue         total_revenue_combined
+        -  Product Category in Total Revenue
+        -  Product Category     share_in_total_revenue%
+  
+    - Top 5 repeated purchase customers
+        - customer_id       number_of_repeated_purchases
+  
+    - CRR       crr_value
+```
+
+
