@@ -27,6 +27,7 @@ class Report(Validator):
         self.logger = logger
         super().__init__(logger=self.logger)
         self.file_path = file_path
+        self.file_dir =  self.file_path.split('/input.json')[0]
         self.event_report = {}
 
 
@@ -42,7 +43,7 @@ class Report(Validator):
                     self.validate(msg=record)
                     self.AddEvent(msg=record)
             
-            FileUtils.write_file(file_name='./data/report.csv',data_dict=self.event_report)
+            FileUtils.write_file(file_name=f'{self.file_dir}/report.csv', data_dict=self.event_report)
 
         except Exception as ex:
             self.logger.error(ex, exc_info=True)
