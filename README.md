@@ -1,6 +1,6 @@
 # Json-Validator
 
-A custom Json Validator, validates the message schema to filter missing missing fields and mismatch field datatypes against defined schema.
+A custom Json Validator, validates the message schema to filter missing fields and mismatch field datatypes against defined schema.
 
 
 ## Directory Structure
