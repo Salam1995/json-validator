@@ -1,6 +1,7 @@
 # Json-Validator
 
-A trial project that serves the purpose of a challenge for [Taxfix GmbH](https://taxfix.de/en/), Germany's most popular mobile tax app, helping with the tax return to immediately submit the tax return electronically from smartphone or web browser to the tax office.
+A custom Json Validator, validates the message schema to filter missing missing fields and mismatch field datatypes against defined schema.
+
 
 ## Directory Structure
 
